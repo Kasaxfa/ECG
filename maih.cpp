@@ -110,9 +110,6 @@ public:
         const Matrix4f& WorldTransformation = p.GetWorldTrans();
         m_pEffect->SetWorldMatrix(WorldTransformation);
         m_pEffect->SetDirectionalLight(m_directionalLight);
-        m_pEffect->SetEyeWorldPos(m_pGameCamera->GetPos());
-        m_pEffect->SetMatSpecularIntensity(1.0f);
-        m_pEffect->SetMatSpecularPower(32);
 
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
@@ -236,7 +233,7 @@ int main(int argc, char** argv)
 {
     GLUTBackendInit(argc, argv);
 
-    if (!GLUTBackendCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, 32, true, "OpenGL tutors")) {
+    if (!GLUTBackendCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, 32, false, "OpenGL tutors")) {
         return 1;
     }
 
